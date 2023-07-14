@@ -1,0 +1,42 @@
+body{
+  /* height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center; */
+  background-color: #D9DCE1;
+} 
+/* .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  margin-top:8px !important;
+} */
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+  margin-top:8px !important;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+  margin-top:8px !important;
+} */
+.form{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto auto auto auto;
+  background-color: white;
+  gap:2em;
+  padding:10px;
+}
+ #profile-summary{
+  color:blue;
+} 
+.add-button{
+  display:flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.sendButton{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  grid-column:auto/span 2;
+  cursor:pointer;
+
+}
