@@ -6,14 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import EducationForm from "./EducationForm";
 import AddEdu from "./AddEdu";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <BasicForm /> */}
     <EducationForm></EducationForm>
-    {/* <AddEdu></AddEdu> */}
-    
   </React.StrictMode>
 );
 

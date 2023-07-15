@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-import { Grid } from "@mui/material";
+import { Grid, formLabelClasses } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
@@ -23,12 +23,12 @@ export default function BasicForm() {
     try {
       let flag = false;
       for (let i in details) {
-        if (details[i]?.err === true) {
+        if (details[i]?.err) {
           console.log(`Error in ${i} field`);
           flag = true;
         }
-        if (details[i]?.required === true && details[i]?.val.length === 0) {
-          console.log(`${i} ia a Required field`);
+        if (details[i]?.required && details[i]?.val.length === 0) {
+          console.log(`${i} is a Required field`);
           flag = true;
         }
       }
@@ -91,7 +91,7 @@ export default function BasicForm() {
                 // value={details.firstName.val}
                 style={{ width: "45%" }}
                 onChange={debounce(function (e) {
-                  let newFirstName;
+                  let newFirstName = {};
 
                   if (
                     !details.firstName.val.match(/^[A-Za-z]+$/gi) &&
@@ -100,13 +100,13 @@ export default function BasicForm() {
                     newFirstName = {
                       ...details.firstName,
                       val: e.target.value,
-                      err: true,
+                      err: false,
                     };
                   } else {
                     newFirstName = {
                       ...details.firstName,
                       val: e.target.value,
-                      err: false,
+                      err: true,
                     };
                   }
 
@@ -133,28 +133,28 @@ export default function BasicForm() {
                 // value={details.lastName.val}
                 style={{ width: "45%" }}
                 onChange={debounce(function (e) {
-                  let newVal;
+                  let newValln = {};
 
                   if (
                     !details.lastName.val.match(/^[A-Za-z]+$/gi) &&
                     details.lastName.val.length > 0
                   ) {
-                    newVal = {
-                      ...details.lastName,
-                      val: e.target.value,
-                      err: true,
-                    };
-                  } else {
-                    newVal = {
+                    newValln = {
                       ...details.lastName,
                       val: e.target.value,
                       err: false,
+                    };
+                  } else {
+                    newValln = {
+                      ...details.lastName,
+                      val: e.target.value,
+                      err: true,
                     };
                   }
 
                   setDetails({
                     ...details,
-                    lastName: newVal,
+                    lastName: newValln,
                   });
                 }, 500)}
                 error={
@@ -187,7 +187,7 @@ export default function BasicForm() {
                 // value={details.email.val}
                 style={{ width: "45%" }}
                 onChange={debounce(function (e) {
-                  let newVal;
+                  let newVale = {};
 
                   if (
                     // !details.email.val.match(
@@ -199,20 +199,20 @@ export default function BasicForm() {
                     ) &&
                     details.email.val.length > 0
                   ) {
-                    newVal = {
+                    newVale = {
                       ...details.email,
                       val: e.target.value,
                       err: false,
                     };
                   } else {
-                    newVal = {
+                    newVale = {
                       ...details.email,
                       val: e.target.value,
                       err: true,
                     };
                   }
 
-                  setDetails({ ...details, email: newVal });
+                  setDetails({ ...details, email: newVale });
                 }, 500)}
                 //   (e) => {
                 //   setDetails({ ...details, email: e.target.value });
@@ -266,7 +266,7 @@ export default function BasicForm() {
                 variant="outlined"
                 style={{ width: "45%" }}
                 onChange={debounce(function (e) {
-                  let newVal;
+                  let newValse;
 
                   if (
                     // !details.sec_email.val.match(
@@ -278,20 +278,20 @@ export default function BasicForm() {
                     ) &&
                     details.sec_email.val.length > 0
                   ) {
-                    newVal = {
+                    newValse = {
                       ...details.sec_email,
                       val: e.target.value,
                       err: false,
                     };
                   } else {
-                    newVal = {
+                    newValse = {
                       ...details.sec_email,
                       val: e.target.value,
                       err: true,
                     };
                   }
 
-                  setDetails({ ...details, sec_email: newVal });
+                  setDetails({ ...details, sec_email: newValse });
                 }, 500)}
                 error={
                   !details.sec_email.val.match(
