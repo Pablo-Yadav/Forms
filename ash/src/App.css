@@ -1,0 +1,22 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+body {
+    background-color: #D9DCE1;
+    display: flex;
+    justify-content: center;
+}
+#root {
+    width: 80%;
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20vh;
+    border-radius: 20px;
+}
+.removebutton {
+    display: flex;
+    justify-content: flex-end;
+}
